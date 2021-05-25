@@ -1,0 +1,46 @@
+>>> add_integer = __import__('add_integer_6').add_integer
+
+# float and int
+>>> add_integer(8.0, 5)
+13
+
+# string and int
+>>> add_integer('hi', 6)
+Traceback (most recent call last):
+		  ...
+TypeError: a must be an integer
+
+# int and string
+>>> add_integer(6, 'yo')
+Traceback (most recent call last):
+		  ...
+TypeError: b must be an integer
+
+# large int
+>>> add_integer(999999999999, 1)
+1000000000000
+
+# test None
+>>> add_integer(None, None)
+Traceback (most recent call last):
+		  ...
+TypeError: a must be an integer
+
+# Test Booleans
+>>> add_integer(True, 45)
+46
+
+>>> add_integer(False, True)
+1
+
+# no arguments
+>>> add_integer()
+Traceback (most recent call last):
+		  ...
+TypeError: add_integer() missing 2 required arguments: 'a' and 'b'
+
+# extra args
+>>> add_integer(6, 2, "well hello there")
+Traceback (most recent call last):
+		  ...
+TypeError: add_integer() takes 2 arguments but 3 were given
